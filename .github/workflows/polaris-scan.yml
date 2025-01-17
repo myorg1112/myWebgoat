@@ -11,13 +11,12 @@ jobs:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
-    
+
     - name: Polaris Scan
       uses: blackduck-inc/black-duck-security-scan@v2.0.0
       with:
-        product: 'polaris'  # 指定使用 Polaris 產品
-        polaris_url: 'https://poc.polaris.blackduck.com'
-        polaris_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
+        polaris_server_url: 'https://poc.polaris.blackduck.com'
+        polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
         polaris_application_name: 'myWebgoat'
         polaris_project_name: 'myWebgoat'
         polaris_branch_name: ${{ github.ref_name }}
