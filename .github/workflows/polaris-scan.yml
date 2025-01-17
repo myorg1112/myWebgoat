@@ -20,7 +20,7 @@ jobs:
     - name: Polaris Scan
       uses: synopsys-sig/polaris-action@v1
       with:
-        polaris_server_url: 'https://polaris.synopsys.com'
+        polaris_server_url: 'https://poc.polaris.blackduck.com'
         polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
         polaris_application_name: 'myWebgoat'
         polaris_project_name: 'myWebgoat'
