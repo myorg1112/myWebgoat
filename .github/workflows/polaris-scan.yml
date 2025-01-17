@@ -2,21 +2,15 @@ name: Polaris Scan
 
 on:
   push:
-    branches: [ main, master ]  # 增加 master 分支
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
-  workflow_dispatch:  # 添加手動觸發選項
-  
+    branches: [ main ]
+  workflow_dispatch:
+
 jobs:
   security:
     runs-on: self-hosted
-    
     steps:
-    - name: Echo Test  # 增加測試步驟
-      run: |
-        echo "Starting workflow..."
-        echo "Current branch is ${{ github.ref }}"
-    
     - uses: actions/checkout@v2
     
     - name: Polaris Scan
