@@ -8,15 +8,11 @@ on:
 
 jobs:
   security:
-    # 修改這裡使用你的 self-hosted runner
-    runs-on: self-hosted  
-    
-    # 可以添加 runner 的標籤
-    # 根據你的設置,runner 有: 'self-hosted', 'Linux', 'X64' 這些標籤
+    runs-on: self-hosted
     
     steps:
     - uses: actions/checkout@v2
-      
+    
     - name: Polaris Scan
       uses: synopsys-sig/polaris-action@v1
       with:
