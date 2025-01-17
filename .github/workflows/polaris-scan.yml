@@ -9,6 +9,7 @@ on:
 jobs:
   security:
     runs-on: self-hosted
+    environment: polaris 
     steps:
     - uses: actions/checkout@v2
 
