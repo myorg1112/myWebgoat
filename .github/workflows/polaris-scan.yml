@@ -20,4 +20,4 @@ jobs:
         polaris_application_name: 'myWebgoat'
         polaris_project_name: 'myWebgoat'
         polaris_branch_name: ${{ github.ref_name }}
-        polaris_assessment_types: 'SAST,SCA'
+        polaris_assessment_types: 'SAST,SCA'#test
