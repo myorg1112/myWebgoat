@@ -8,21 +8,17 @@ on:
 
 jobs:
   security:
-    runs-on: self-hosted
+    runs-on: self-hosted  # 確保 self-hosted runner 已安裝 Java 23
     environment: polaris 
     steps:
     - uses: actions/checkout@v2
     
-    # 添加 Java 設置
-    - name: Set up Java
-      uses: actions/setup-java@v3
-      with:
-        java-version: '23'
-        distribution: 'microsoft'
-        cache: maven
+    # 檢查 Java 版本
+    - name: Check Java version
+      run: java -version
         
     - name: Polaris Scan
-      uses: blackduck-inc/black-duck-security-scan@v2.0.0
+      uses: synopsys-sig/synopsys-action@v1.13.0
       with:
         polaris_server_url: 'https://poc.polaris.blackduck.com'
         polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
