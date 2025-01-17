@@ -8,7 +8,12 @@ on:
 
 jobs:
   security:
-    runs-on: ubuntu-latest
+    # 修改這裡使用你的 self-hosted runner
+    runs-on: self-hosted  
+    
+    # 可以添加 runner 的標籤
+    # 根據你的設置,runner 有: 'self-hosted', 'Linux', 'X64' 這些標籤
+    
     steps:
     - uses: actions/checkout@v2
       
@@ -17,6 +22,6 @@ jobs:
       with:
         polaris_server_url: 'https://polaris.synopsys.com'
         polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
-        polaris_application_name: 'my-app'
-        polaris_project_name: 'my-project'
+        polaris_application_name: 'myWebgoat'
+        polaris_project_name: 'myWebgoat'
         polaris_branch_name: ${{ github.ref_name }}
