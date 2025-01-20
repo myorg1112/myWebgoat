@@ -18,7 +18,7 @@ jobs:
       run: java -version
         
     - name: Polaris Scan
-      uses: synopsys-sig/synopsys-action@v1.13.0
+      uses: synopsys-sig/synopsys-action@v1.13.1
       with:
         polaris_server_url: 'https://poc.polaris.blackduck.com'
         polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
